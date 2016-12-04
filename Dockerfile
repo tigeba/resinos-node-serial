@@ -1,14 +1,4 @@
-FROM resin/raspberrypi3-alpine-node:slim
-
-## Needed to add python and gcc to build serialport
-## could probably trim it down..
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
-  && pip install virtualenv \
-  && rm -rf /var/cache/apk/*
+FROM resin/raspberrypi3-node:6.9.1
 
 WORKDIR /usr/src/app
 
